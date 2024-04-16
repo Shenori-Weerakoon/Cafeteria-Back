@@ -27,6 +27,9 @@ app.use('/menuItem', menuItem);
 const user = require('./routes/user.js');
 app.use('/user', user);
 
+const payOrder = require('./routes/payOrder.js');
+app.use('/payOrder', payOrder);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
