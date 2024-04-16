@@ -24,6 +24,9 @@ connection.once('open', () => {
 const menuItem = require('./routes/menuItem.js');
 app.use('/menuItem', menuItem);
 
+const user = require('./routes/user.js');
+app.use('/user', user);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
