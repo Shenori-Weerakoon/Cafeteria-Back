@@ -33,4 +33,10 @@ app.use('/payOrder', payOrder);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
+
+    const admin = require('./routes/admin.js');
+    app.use('/admin', admin);
+
+    const salary = require('./routes/salary.js');
+    app.use('/salary', salary);
 });
