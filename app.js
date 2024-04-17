@@ -39,4 +39,7 @@ app.listen(port, () => {
 
     const salary = require('./routes/salary.js');
     app.use('/salary', salary);
+
+    const promotion = require('./routes/promotion.js');  
+    app.use('/promotion', promotion);
 });
