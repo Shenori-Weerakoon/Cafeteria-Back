@@ -42,4 +42,10 @@ app.listen(port, () => {
 
     const promotion = require('./routes/promotion.js');  
     app.use('/promotion', promotion);
+
+    const support = require('./routes/support.js');
+app.use('/support', support);
+
+const feedback = require('./routes/feedback.js');
+app.use('/feedback', feedback);
 });
