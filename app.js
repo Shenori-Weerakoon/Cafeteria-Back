@@ -30,6 +30,9 @@ app.use('/user', user);
 const payOrder = require('./routes/payOrder.js');
 app.use('/payOrder', payOrder);
 
+const codOrder = require('./routes/codOrder.js');
+app.use('/codOrder', codOrder);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

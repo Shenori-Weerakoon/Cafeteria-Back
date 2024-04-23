@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const orderDetailsSchema = new Schema({
+const codOrderDetailsSchema = new Schema({
     orderID: {
         type: String,
         required: true
@@ -42,7 +42,6 @@ const orderDetailsSchema = new Schema({
     timestamps: true
 });
 
-const payOrder = mongoose.model('payOrder', orderDetailsSchema);
+const codOrder = mongoose.model('codOrder', codOrderDetailsSchema);
 
-module.exports = payOrder;
-//payorder backend comment
+module.exports = codOrder;
