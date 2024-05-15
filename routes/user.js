@@ -87,6 +87,15 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.route('/getAll').get(async (req, res, next) => {
+    try {
+        const user = await userSchema.find();
+        return res.status(200).json(user);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 
 
 module.exports = router;
