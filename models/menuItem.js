@@ -46,5 +46,24 @@ const menuItem = new Schema({
 }, {
     timestamps: true
 });
+
 const menuItemSchema = mongoose.model('menuItem', menuItem);
 module.exports = menuItemSchema;
+
+
+/*menuItemSchema.statics.search = async function(query) {
+    try {
+        const results = await this.find({
+            $or: [
+                { itemName: { $regex: query, $options: 'i' } }, // Case-insensitive search on itemName
+                { description: { $regex: query, $options: 'i' } } // Case-insensitive search on description
+            ]
+        });
+        return results;
+    } catch (error) {
+        throw new Error('Error searching menu items:', error);
+    }
+
+};*/
+
+
