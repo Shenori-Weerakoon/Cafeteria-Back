@@ -2,8 +2,8 @@ const router = require('express').Router();
 const promotionSchema = require('../models/promotion');
 
 router.route('/addPromotion').post((req, res) => {
-    const { promotionId, name, promo, status, date } = req.body;
-    const promotionItem = new promotionSchema({ promotionId, name, promo, status, date });
+    const { promotionId, name, promo, status, date,con } = req.body;
+    const promotionItem = new promotionSchema({ promotionId, name, promo, status, date,con });
     promotionItem.save()
         .then(() => res.json('Promotion Added!'))
         .catch(err => res.status(400).json('Error: ' + err));
@@ -11,9 +11,9 @@ router.route('/addPromotion').post((req, res) => {
 
 router.route("/update/:promotionId").put(async (req, res) => {
     const { promotionId } = req.params;
-    const { name, promo, status, date } = req.body;
+    const { name, promo, status, date,con } = req.body;
 
-    promotionSchema.findOneAndUpdate({ promotionId: promotionId }, { name, promo, status, promotionId, date })
+    promotionSchema.findOneAndUpdate({ promotionId: promotionId }, { name, promo, status, promotionId, date,con })
         .then(() => {
             res.status(200).send({ status: "Promotion Updated" });
         })

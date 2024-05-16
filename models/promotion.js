@@ -22,6 +22,10 @@ const promotion = new Schema({
     date: {
         type: String,
         required: true,
+    },
+    con: {
+        type: Number,
+        required: true,
     }
 }, {
     timestamps: true
