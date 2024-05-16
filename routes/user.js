@@ -96,6 +96,4 @@ router.route('/getAll').get(async (req, res, next) => {
     }
 });
 
-
-
 module.exports = router;
